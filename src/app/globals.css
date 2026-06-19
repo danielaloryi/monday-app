@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* ============================================================
+   MONDAY-STYLE DESIGN SYSTEM
+   Signature: color-coded board energy + clean SaaS shell
+   ============================================================ */
+
+@theme {
+  /* Brand palette — derived from Monday's status-pill spectrum */
+  --color-brand: #6161ff;          /* primary indigo */
+  --color-brand-dark: #4f4fd9;
+  --color-brand-soft: #ececff;
+  --color-ink: #323338;            /* primary text */
+  --color-ink-soft: #676879;       /* secondary text */
+  --color-ink-faint: #9699a6;      /* tertiary text */
+  --color-line: #e6e9ef;           /* hairlines */
+  --color-line-soft: #f0f1f5;
+  --color-canvas: #ffffff;
+  --color-surface: #f6f7fb;        /* app background */
+
+  /* Status / group spectrum — the heart of Monday */
+  --color-status-done: #00c875;
+  --color-status-working: #fdab3d;
+  --color-status-stuck: #e2445c;
+  --color-status-blank: #c4c4c4;
+  --color-pulse-purple: #a25ddc;
+  --color-pulse-teal: #009eb5;
+  --color-pulse-pink: #ff5ac4;
+  --color-pulse-blue: #579bfc;
+  --color-pulse-lime: #cab641;
+  --color-pulse-coral: #ff7575;
+  --color-pulse-river: #66ccff;
+
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 12px;
+  --shadow-card: 0 4px 16px -4px rgba(50, 51, 56, 0.12);
+  --shadow-pop: 0 8px 32px -8px rgba(50, 51, 56, 0.22);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    color: var(--color-ink);
+    background: var(--color-canvas);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .scroll-thin::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background: #d7dae2;
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb:hover {
+    background: #c2c6d2;
+    background-clip: content-box;
+  }
+  .scroll-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      92deg,
+      #6161ff 0%,
+      #a25ddc 30%,
+      #ff5ac4 60%,
+      #fdab3d 100%
+    );
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+
+  @keyframes shimmer {
+    to {
+      background-position: 220% center;
+    }
+  }
+
+  .animate-rise {
+    animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-pop {
+    animation: pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .grid-dots {
+    background-image: radial-gradient(circle, #e6e9ef 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+}
