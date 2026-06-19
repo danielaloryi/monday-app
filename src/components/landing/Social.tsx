@@ -11,20 +11,20 @@ const stats = [
 const quotes = [
   {
     body: "We replaced four tools with one board. Our launch cycle dropped from six weeks to nine days, and nobody asks 'where does this live?' anymore.",
-    name: "Priya Raman",
-    role: "Head of Operations, Northwind",
+    name: "Daniel Mawuli Aloryi",
+    role: "Senior Software Engineer, XXX",
     id: "ad",
   },
   {
     body: "The automations alone gave each manager back about a day a week. It's the first tool the whole company actually adopted without a mandate.",
-    name: "Daniel Osei",
-    role: "VP Product, Cobalt",
+    name: "ABCDEF",
+    role: "VP Product, YYY",
     id: "ko",
   },
   {
     body: "Leadership reads the dashboard, designers live in kanban, and finance gets the table. Same data, zero copy-paste. That's the magic.",
-    name: "Sofia Marino",
-    role: "Program Lead, Meridian",
+    name: "GHIJKL",
+    role: "Program Lead, ZZZ",
     id: "na",
   },
 ];
