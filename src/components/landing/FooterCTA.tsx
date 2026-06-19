@@ -96,7 +96,7 @@ export function SiteFooter() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 sm:flex-row">
           <p className="text-sm text-ink-faint">
             © {new Date().getFullYear()} monday.app — Not
-            affiliated with monday.com. Just a replica for review purposes
+            affiliated with monday.com. Just a sample for review purposes
           </p>
           <div className="flex gap-6 text-sm text-ink-faint">
             <Link href="/product" className="hover:text-ink">
